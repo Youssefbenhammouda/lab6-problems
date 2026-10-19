@@ -6,13 +6,13 @@ public class Shop
 {
     public static void main (String[] args)
     {
-        ArrayList<Item> cart = new ArrayList();
+        ArrayList<Item> cart = new ArrayList<>();
         Item item;
         String itemName;
         double itemPrice;
         int quantity;
         Scanner scan = new Scanner(System.in);
-        String keepShopping = "y";
+        String keepShopping;
         do
         {
             System.out.print ("Enter the name of the item: ");
@@ -21,8 +21,25 @@ public class Shop
             itemPrice = scan.nextDouble();
             System.out.print ("Enter the quantity: ");
             quantity = scan.nextInt();
-// *** create a new item and add it to the cart
+            // *** create a new item and add it to the cart
             // *** print the contents of the cart object using println
+            item = new Item(itemName,itemPrice,quantity);
+            cart.add(item);
+
+            // System.out.println(cart);
+            double total = 0;
+            for(Item item1: cart){
+
+                System.out.println(item1);
+                total += item1.getPrice()*item1.getQuantity();
+
+            }
+            System.out.println("Total: "+total+" MAD");
+
+
+
+
+            scan.nextLine();
             System.out.print ("Continue shopping (y/n)? ");
             keepShopping = scan.nextLine();
         }
