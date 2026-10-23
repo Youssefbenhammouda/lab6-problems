@@ -18,10 +18,10 @@ public class Library {
 
     public void displayDocuments() {
 
-        System.out.printf("Library Documents: ");
+        System.out.printf("Library Documents: %n");
 
         for (int i = 0; i < documents.size(); i++) {
-            System.out.printf(" - %s",documents.get(i) );
+            System.out.printf(" - %s%n",documents.get(i) );
         }
     }
 
